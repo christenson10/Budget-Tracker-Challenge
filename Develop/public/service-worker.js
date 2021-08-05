@@ -39,13 +39,12 @@ self.addEventListener('install', function (event) {
           console.log('file is not cached, fetching : ' + e.request.url)
           return fetch(e.request)
         }
-  
-        // You can omit if/else for console.log & put one line below like this too.
-        // return request || fetch(e.request)
       })
     )
-  })
+  });
 
+
+  
   self.addEventListener('activate', function(e) {
     e.waitUntil(
       caches.keys().then(function(keyList) {
